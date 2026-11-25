@@ -1,0 +1,21 @@
+FlechasJR Webs — sitio listo para publicar
+==========================================
+
+Esta carpeta es la versión de producción (CSS y JavaScript minificados).
+La versión editable está en el proyecto: flechasjr-webs/
+
+Cómo publicar
+- Vercel: sube esta carpeta (o súbela a GitHub e impórtala). vercel.json ya trae la caché de archivos.
+- Hostinger / Apache: sube el contenido a public_html. .htaccess ya activa compresión y caché.
+- Cualquier hosting estático sirve: no necesita base de datos ni servidor.
+
+Importante
+- Abre el sitio desde un servidor (no con doble clic al index.html): el quetzal 3D y algunos módulos
+  no cargan desde file://. Para probar en tu computador:  python3 -m http.server 8000  y entra a http://localhost:8000
+- Todo está alojado en el sitio (fuentes, three.js, modelo 3D); no depende de servicios externos.
+
+Contenido
+- index.html            Página principal
+- proyecto.html?id=...  Casos de estudio (8 proyectos)
+- assets/3d/quetzal.glb Quetzal animado (1,2 MB)
+- js/vendor/            three.js r170 + decodificador Draco

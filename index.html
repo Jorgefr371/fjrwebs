@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlechasJR · Páginas web para empresas que empiezan</title>
+  <meta name="description" content="Jorge, diseñador web. Páginas web a medida para empresas nuevas: rápidas, claras y pensadas para vender.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fuentes/PlusJakartaSans-latin-1.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fuentes.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="importmap">
+    { "imports": { "three": "./js/vendor/three/three.module.min.js", "three/addons/": "./js/vendor/three/addons/" } }
+  </script>
+  <script>
+    // aplica el tema guardado antes de pintar para evitar parpadeo
+    try { const t = localStorage.getItem("fjr-tema"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="cursor" aria-hidden="true"><span class="cursor__halo"></span><span class="cursor__punto"></span></div>
+
+  <header class="barra">
+    <a class="logo" href="#inicio" aria-label="FlechasJR, ir al inicio">FlechasJR<span class="logo__punto">.</span></a>
+    <nav class="barra__acciones" aria-label="Opciones">
+      <button class="pastilla" id="btn-idioma" type="button" aria-label="EN: cambiar idioma a inglés">EN</button>
+      <button class="pastilla pastilla--icono" id="btn-tema" type="button" aria-label="Cambiar a modo oscuro">
+        <svg class="ico-luna" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="ico-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="pastilla pastilla--icono" id="btn-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14M5 12h14M5 16h14"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Secciones">
+      <a href="#trabajos" data-i18n="menuTrabajos">Trabajos</a>
+      <a href="#proceso" data-i18n="menuProceso">Cómo trabajo</a>
+      <a href="#problemas" data-i18n="pieErrores">Errores comunes</a>
+      <a href="#contacto" data-i18n="menuContacto">Hablemos</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="rejilla" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+      <div class="hero__texto">
+        <h1 class="titulo">
+          <span class="titulo__linea"><span data-i18n="saludo">Hola, soy Jorge.</span><span class="mano" role="img" aria-label="mano saludando">👋</span></span>
+          <span class="titulo__linea">
+            <span class="rol" id="rol">
+              <span class="solo-lector" id="rol-texto">Web Designer</span><span class="rol__base" aria-hidden="true"></span><span class="rol__iris" aria-hidden="true"></span><span class="rol__cursor" aria-hidden="true"></span>
+            </span>
+          </span>
+        </h1>
+        <p class="bajada" data-i18n-html="bajada">Diseño y desarrollo páginas web para empresas que están empezando: rápidas, claras y pensadas para que tus clientes te escriban. Trabajo con <strong>Inteligencia Artificial</strong> en mi proceso para entregarte en menos tiempo, sin descuidar el detalle.</p>
+        <a class="cta" href="#contacto"><span data-i18n="cta">Charlemos</span><span class="cta__flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+
+      <div class="hero__visual">
+        <div class="pila" id="pila" aria-roledescription="carrusel" aria-label="Ejemplos de páginas web por tipo de negocio">
+          <!-- las tarjetas se generan en js/main.js -->
+        </div>
+        <p class="pila__leyenda" id="pila-leyenda" aria-live="polite"></p>
+      </div>
+
+      <a class="desplazar" href="#problemas"><span data-i18n="desplazar">Desplázate</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+    </section>
+
+    <section class="problemas" id="problemas" aria-labelledby="gancho">
+      <h2 class="gancho revelar" id="gancho">
+        <span class="gancho__suave" data-i18n="ganchoA">No vendo páginas bonitas.</span>
+        <span class="gancho__fuerte iris-hover"><span class="iris-hover__base" data-i18n="ganchoB">Construyo páginas que venden.</span><span class="iris-hover__capa" aria-hidden="true" data-i18n="ganchoB">Construyo páginas que venden.</span></span>
+      </h2>
+      <p class="problemas__intro revelar" data-i18n="problemasIntro">Estos son los cuatro errores que más le cuestan clientes a una empresa que empieza, y lo que hace una web bien construida para corregirlos.</p>
+      <div class="acordeon revelar" id="acordeon"><!-- se genera en js/main.js --></div>
+    </section>
+
+    <section class="trabajos" id="trabajos" aria-labelledby="trabajos-titulo">
+      <div class="trabajos__escenario">
+        <h2 class="trabajos__titulo" id="trabajos-titulo" data-i18n="trabajosTitulo">Mi trabajo</h2>
+        <div class="trabajos__pista" id="pista"><!-- tarjetas generadas en js/main.js --></div>
+      </div>
+    </section>
+
+    <section class="experiencia" id="experiencia" aria-labelledby="exp-titulo">
+      <div class="exp__escena" id="exp-escena">
+        <div class="exp__ondas" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="exp__orbitas" aria-hidden="true"><i></i><i></i></div>
+        <h2 class="exp__titulo" id="exp-titulo">
+          <span class="exp__linea" data-i18n="expA">+3 años de experiencia</span>
+          <span class="exp__linea iris-hover"><span class="iris-hover__base" data-i18n="expB">en desarrollo web</span><span class="iris-hover__capa" aria-hidden="true" data-i18n="expB">en desarrollo web</span></span>
+        </h2>
+        <ul class="exp__herramientas" id="herramientas" aria-label="Herramientas con las que trabajo"><!-- js/main.js --></ul>
+      </div>
+    </section>
+
+    <section class="proceso" id="proceso" aria-labelledby="proceso-titulo">
+      <div class="proceso__cabeza revelar">
+        <h2 class="proceso__titulo" id="proceso-titulo"><span data-i18n="procesoTitulo">Cómo trabajo.</span><span class="mano mano--trato" role="img" aria-label="apretón de manos">🤝</span></h2>
+        <p class="proceso__intro" data-i18n="procesoIntro">Trabajo de forma cercana y transparente, sin tecnicismos innecesarios. Divido cada proyecto en cuatro etapas para que siempre sepas en qué vamos y tu web salga exactamente como tu negocio la necesita.</p>
+      </div>
+      <ol class="proceso__pasos" id="proceso-pasos">
+        <li class="etapa" style="--i:0">
+          <div class="etapa__linea" aria-hidden="true"><span class="etapa__num">01</span><svg class="etapa__ico" viewBox="0 0 24 24"><path d="M6 8.5a6 6 0 1 1 12 0c0 3.5-3 4.5-3 7.5a3 3 0 0 1-6 0"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2 2-2 3.5"/></svg><i></i></div>
+          <h3 data-i18n="paso1T">Te escucho</h3>
+          <p data-i18n="paso1D">Antes de diseñar nada, entiendo tu negocio: qué vendes, a quién le vendes y qué quieres que haga la gente cuando entre a tu web.</p>
+        </li>
+        <li class="etapa" style="--i:1">
+          <div class="etapa__linea" aria-hidden="true"><span class="etapa__num">02</span><svg class="etapa__ico" viewBox="0 0 24 24"><path d="M4 20l4-1L19 8l-3-3L5 16Z"/><path d="M14 7l3 3"/><path d="M14 20h6"/></svg><i></i></div>
+          <h3 data-i18n="paso2T">Diseño</h3>
+          <p data-i18n="paso2D">Te propongo la estructura y el diseño visual de tu web. Lo revisamos juntos y ajustamos hasta que sientas que de verdad te representa.</p>
+        </li>
+        <li class="etapa" style="--i:2">
+          <div class="etapa__linea" aria-hidden="true"><span class="etapa__num">03</span><svg class="etapa__ico" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg><i></i></div>
+          <h3 data-i18n="paso3T">Desarrollo</h3>
+          <p data-i18n="paso3D">Construyo tu web rápida, adaptada al celular y optimizada para Google, con WhatsApp, formularios y analítica conectados desde el inicio.</p>
+        </li>
+        <li class="etapa" style="--i:3">
+          <div class="etapa__linea" aria-hidden="true"><span class="etapa__num">04</span><svg class="etapa__ico" viewBox="0 0 24 24"><path d="M12 15c-2-1-3-2-4-4 1-4 4-7 9-7 0 5-3 8-5 11Z"/><path d="M8 11H5l2-3h4M12 15v3l3-2v-4"/><path d="M7 17c-1 1-1.5 2.5-1.5 2.5S7 19 8 18"/></svg><i></i></div>
+          <h3 data-i18n="paso4T">Lanzo y acompaño</h3>
+          <p data-i18n="paso4D">Publico tu web con tu dominio y certificado de seguridad, te enseño a manejarla y sigo pendiente de que todo funcione después del lanzamiento.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="contacto__grid">
+        <figure class="contacto__foto revelar">
+          <img src="assets/jorge.webp" alt="Jorge, diseñador web de FlechasJR" width="880" height="1100" loading="lazy" decoding="async">
+          <figcaption><strong>Jorge Flechas</strong><span data-i18n="contactoRol">Web Designer · FlechasJR</span></figcaption>
+        </figure>
+        <div class="contacto__texto revelar">
+          <h2 class="contacto__titulo" id="contacto-titulo">
+            <span data-i18n="contactoA">Disponible para nuevos proyectos.</span>
+            <span class="contacto__iris" data-i18n="contactoB">Desde Colombia, para donde sea.</span>
+          </h2>
+          <p class="contacto__bajada" data-i18n="contactoBajada">Cuéntame de tu negocio y lo que tienes en mente, y te respondo con una propuesta para tu página web.</p>
+          <div class="contacto__botones">
+            <a class="cta" id="cta-whatsapp" href="https://wa.me/573041216884?text=Hola%20Jorge%2C%20quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener"><span data-i18n="cta">Charlemos</span><span class="cta__flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+            <a class="contacto__correo" href="mailto:alpha_blind371@proton.me" data-i18n="contactoCorreoBtn">o escríbeme un correo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pie">
+      <div class="pie__cols">
+        <div>
+          <h3 data-i18n="pieContacto">Contacto</h3>
+          <ul>
+            <li><a href="mailto:alpha_blind371@proton.me">alpha_blind371@proton.me</a></li>
+            <li><a href="https://wa.me/573041216884" target="_blank" rel="noopener">+57 304 121 6884</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="pieRedes">Redes</h3>
+          <ul>
+            <li><a href="https://www.youtube.com/@FlechasJR" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.instagram.com/jflechas371" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="pieNav">Navegación</h3>
+          <ul>
+            <li><a href="#trabajos" data-i18n="menuTrabajos">Trabajos</a></li>
+            <li><a href="#proceso" data-i18n="menuProceso">Cómo trabajo</a></li>
+            <li><a href="#problemas" data-i18n="pieErrores">Errores comunes</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__base">
+        <p data-i18n="pieDerechos">© 2026 · FlechasJR · Todos los derechos reservados</p>
+        <a class="pie__arriba" href="#inicio" aria-label="Volver arriba"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+      </div>
+      <div class="pie__marca" aria-hidden="true" data-texto="FlechasJR."></div>
+    </footer>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/quetzal-vuelo.js"></script>
+</body>
+</html>
